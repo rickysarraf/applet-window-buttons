@@ -52,7 +52,7 @@ Item {
     readonly property bool plasma515: AppletDecoration.Environment.plasmaDesktopVersion >= AppletDecoration.Environment.makeVersion(5,15,0)
 
     readonly property bool mustHide: {
-        if (visibility === AppletDecoration.Types.AlwaysVisible) {
+        if (visibility === AppletDecoration.Types.AlwaysVisible || inEditMode) {
             return false;
         }
 
@@ -116,7 +116,7 @@ Item {
     }
 
     // START visual properties
-    property bool inactiveStateEnabled: root.latteInEditMode || plasmoid.userConfiguring ? false : plasmoid.configuration.inactiveStateEnabled
+    property bool inactiveStateEnabled: inEditMode ? false : plasmoid.configuration.inactiveStateEnabled
 
     property int thickPadding: {
         if (auroraeThemeEngine.isEnabled && plasmoid.configuration.useDecorationMetrics) {
@@ -314,12 +314,16 @@ Item {
 
         Component{
             id: latteTrackerComponent
-            LatteWindowsTracker{}
+            LatteWindowsTracker{
+                filterByScreen: plasmoid.configuration.filterByScreen
+            }
         }
 
         Component{
             id: plasmaTasksModel
-            PlasmaTasksModel{}
+            PlasmaTasksModel{
+                filterByScreen: plasmoid.configuration.filterByScreen
+            }
         }
     }
     //!
@@ -494,7 +498,7 @@ Item {
             localY: y
 
             visible: {
-                if (visibility === AppletDecoration.Types.AlwaysVisible) {
+                if (visibility === AppletDecoration.Types.AlwaysVisible || inEditMode) {
                     return true;
                 }
 
@@ -612,7 +616,7 @@ Item {
             auroraeTheme: auroraeThemeEngine
 
             visible: {
-                if (visibility === AppletDecoration.Types.AlwaysVisible) {
+                if (visibility === AppletDecoration.Types.AlwaysVisible || inEditMode) {
                     return true;
                 }
 
