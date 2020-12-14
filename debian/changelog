@@ -1,6 +1,7 @@
-applet-window-buttons (0.8.1-1) UNRELEASED; urgency=low
+applet-window-buttons (0.8.1+git0.7600060f-1) UNRELEASED; urgency=medium
 
   * Initial release. Closes: #nnnn
     <nnnn is the bug number of your ITP>
+  * New upstream version 0.8.1+git0.7600060f
 
- -- Ritesh Raj Sarraf <rrs@debian.org>  Sat, 13 Jun 2020 10:00:04 +0530
+ -- Ritesh Raj Sarraf <rrs@debian.org>  Mon, 14 Dec 2020 13:30:08 +0530
