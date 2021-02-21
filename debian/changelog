@@ -1,4 +1,4 @@
-applet-window-buttons (0.8.1+git1.16c66e9b-1) UNRELEASED; urgency=medium
+applet-window-buttons (0.8.1+git1.16c66e9b-1) norbert; urgency=medium
 
   * Initial release. Closes: #nnnn
     <nnnn is the bug number of your ITP>
