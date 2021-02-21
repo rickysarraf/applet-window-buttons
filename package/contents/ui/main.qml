@@ -199,7 +199,9 @@ Item {
             return latteBridge.palette.scheme;
         }
 
-        return plasmoid.configuration.selectedScheme;
+        return plasmoid.configuration.selectedScheme === "kdeglobals" ?
+                    colorsModel.defaultSchemeFile() :
+                    plasmoid.configuration.selectedScheme
     }
     // END decoration properties
 
@@ -350,6 +352,10 @@ Item {
 
     AppletDecoration.DecorationsModel {
         id: decorations
+    }
+
+    AppletDecoration.ColorsModel {
+        id: colorsModel
     }
 
     AppletDecoration.PlasmaThemeExtended {
@@ -614,6 +620,9 @@ Item {
             isKeepAbove: root.isLastActiveWindowKeepAbove
             buttonType: model.buttonType
             auroraeTheme: auroraeThemeEngine
+
+            monochromeIconsEnabled: latteBridge && latteBridge.applyPalette && auroraeThemeEngine.hasMonochromeIcons
+            monochromeIconsColor: latteBridge ? latteBridge.palette.textColor : "transparent"
 
             visible: {
                 if (visibility === AppletDecoration.Types.AlwaysVisible || inEditMode) {
