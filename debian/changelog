@@ -1,3 +1,10 @@
+applet-window-buttons (0.8.1+git2.c516a507-1) norbert; urgency=medium
+
+  * New upstream version 0.8.1+git1.16c66e9b
+  * New upstream version 0.8.1+git2.c516a507
+
+ -- Ritesh Raj Sarraf <rrs@debian.org>  Thu, 01 Apr 2021 20:20:55 +0530
+
 applet-window-buttons (0.8.1+git1.16c66e9b-1) norbert; urgency=medium
 
   * Initial release. Closes: #nnnn
