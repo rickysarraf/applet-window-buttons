@@ -1,3 +1,9 @@
+applet-window-buttons (0.9.0+git0.6f881c25-1) unstable; urgency=medium
+
+  * New upstream version 0.9.0+git0.6f881c25
+
+ -- Ritesh Raj Sarraf <rrs@debian.org>  Fri, 15 Oct 2021 20:36:37 +0530
+
 applet-window-buttons (0.9.0-1) norbert; urgency=medium
 
   * New upstream version 0.9.0
