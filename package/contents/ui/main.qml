@@ -243,11 +243,6 @@ Item {
 
     onButtonsStrChanged: initButtons();
 
-    Connections{
-        target: !auroraeThemeEngine.isEnabled ? root : null
-        onThickPaddingChanged: initButtons();
-    }
-
     Connections {
         target: bridgeItem
         onPluginChanged: initButtons();
@@ -330,15 +325,6 @@ Item {
         id: plasmaThemeExtended
 
         readonly property bool isActive: plasmoid.configuration.selectedScheme === "_plasmatheme_"
-
-        function triggerUpdate() {
-            if (isActive) {
-                initButtons();
-            }
-        }
-
-        onThemeChanged: triggerUpdate();
-        onColorsChanged: triggerUpdate();
     }
 
     AppletDecoration.AuroraeTheme {
@@ -417,9 +403,7 @@ Item {
                                                    root.height - 2 * thickPadding :
                                                    root.width - 2 * thickPadding
 
-        onButtonThicknessChanged: console.log("Window Buttons Applet :: Button Thickness ::: " + buttonThickness);
-
-        opacity: mustHide && !inEditMode ? 0 : 1
+        opacity: mustHide && !inEditMode && (plasmoid.status === PlasmaCore.Types.HiddenStatus) ? 0 : 1
         visible: opacity === 0 ? false : true
 
         Behavior on opacity {

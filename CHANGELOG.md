@@ -1,5 +1,18 @@
 ### CHANGELOG
 
+#### Version 0.10.1
+
+* fix glitches with slide-in/out animations
+* improve cpu and hard disk usage
+* remove all workarounds related to faulty buttons painting
+* respect and trust bug fixes in decorations provided with Plasma 5.23.2
+
+#### Version 0.10.0
+
+* support Plasma 5.23
+* depend only on Plasma and KDecorations2 >= 5.23
+* drop option for plasma panels to disable decoration on maximized windows
+
 #### Version 0.9.0
 
 * support Plasma 5.18 and 5.21
@@ -10,7 +23,6 @@
 * fix, improve default based on Plasma values
 * fix, preserve empty space for hidden states when needed
 * remove no needed workarounds
-
 
 #### Version 0.8.1
 
